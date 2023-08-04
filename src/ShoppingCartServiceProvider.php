@@ -2,9 +2,9 @@
 
 namespace Mirchaye\ShoppingCart;
 
+use Mirchaye\ShoppingCart\Commands\ShoppingCartCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Mirchaye\ShoppingCart\Commands\ShoppingCartCommand;
 
 class ShoppingCartServiceProvider extends PackageServiceProvider
 {
