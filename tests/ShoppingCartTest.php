@@ -1,4 +1,5 @@
 <?php
+
 use Mirchaye\ShoppingCart\ShoppingCart;
 
 expect()->extend('toBeApproximately', function ($expected, $precision = 0.0001) {
@@ -72,7 +73,6 @@ it('throws an exception when trying to add an item with invalid data', function 
 
     $cart->addItem($invalidItemData);
 })->throws(InvalidArgumentException::class);
-
 
 it('can add an item to the wishlist cart', function () {
     $cart = new ShoppingCart();

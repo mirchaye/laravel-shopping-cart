@@ -8,22 +8,23 @@ use Mirchaye\ShoppingCart\Contracts\ShoppingCartInterface;
 class ShoppingCart implements ShoppingCartInterface
 {
     private array $carts = [];
+
     private int|float $taxRate;
 
     /**
      * Set the tax rate for the cart from the package configuration.
      */
-//    public function setTaxRateFromConfig(): void
-//    {
-//        $this->taxRate = config('shopping-cart.tax_rate', 0);
-//    }
+    //    public function setTaxRateFromConfig(): void
+    //    {
+    //        $this->taxRate = config('shopping-cart.tax_rate', 0);
+    //    }
 
     protected array $requiredKeys = ['id', 'name', 'price', 'quantity'];
 
     /**
      * Add an item to the default cart instance.
      *
-     * @param array $itemData
+     * @param  array  $itemData
      */
     public function addItem($itemData): void
     {
@@ -35,7 +36,7 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Remove the item from the default cart instance.
      *
-     * @param string $itemId
+     * @param  string  $itemId
      */
     public function removeItem($itemId): void
     {
@@ -50,9 +51,9 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Update the item from any instance of the cart using the cart UUID.
      *
-     * @param string $cartUUID
-     * @param string $itemId
-     * @param array $newItemData
+     * @param  string  $cartUUID
+     * @param  string  $itemId
+     * @param  array  $newItemData
      */
     public function updateItem($cartUUID, $itemId, $newItemData): void
     {
@@ -67,18 +68,15 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Set the tax rate for the cart.
      *
-     * @param float $taxRate
+     * @param  float  $taxRate
      */
     public function setTaxRate($taxRate): void
     {
         $this->taxRate = $taxRate > 0 ? $taxRate : config('shopping-cart.tax_rate', default: 0);
     }
 
-
     /**
      * Get the tax rate for the cart.
-     *
-     * @return float|int
      */
     public function getTaxRate(): float|int
     {
@@ -88,7 +86,7 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Add an item to the cart with VAT.
      *
-     * @param array $itemData
+     * @param  array  $itemData
      */
     public function addItemWithVAT($itemData): void
     {
@@ -103,7 +101,7 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Add an item to the cart without VAT.
      *
-     * @param array $itemData
+     * @param  array  $itemData
      */
     public function addItemWithoutVAT($itemData): void
     {
@@ -115,8 +113,8 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Add an item to a specific instance of the cart.
      *
-     * @param string $instance
-     * @param array $itemData
+     * @param  string  $instance
+     * @param  array  $itemData
      */
     public function addInstanceCart($instance, $itemData): void
     {
@@ -127,8 +125,6 @@ class ShoppingCart implements ShoppingCartInterface
 
     /**
      * Get the total amount in the cart.
-     *
-     * @return float|integer
      */
     public function getTotal(): float|int
     {
@@ -145,8 +141,6 @@ class ShoppingCart implements ShoppingCartInterface
 
     /**
      * Get the subtotal amount in the cart.
-     *
-     * @return float|integer
      */
     public function getSubtotal(): float|int
     {
@@ -161,19 +155,14 @@ class ShoppingCart implements ShoppingCartInterface
 
     /**
      * Get the tax amount in the cart.
-     *
-     * @return float|integer
      */
     public function getTax(): float|int
     {
         return $this->getTotal() - $this->getSubtotal();
     }
+
     /**
      * Change the cart instance of an item.
-     *
-     * @param  string  $cartUUID
-     * @param  string  $itemId
-     * @param  string  $newCartUUID
      */
     public function changeCartItemInstance(string $cartUUID, string $itemId, string $newCartUUID): void
     {
@@ -190,7 +179,6 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Validate the required keys in the item data array.
      *
-     * @param  array  $itemData
      * @throws InvalidArgumentException
      */
     private function validateItemData(array $itemData): void
@@ -199,6 +187,4 @@ class ShoppingCart implements ShoppingCartInterface
             throw new InvalidArgumentException("Invalid item data. The itemData array must contain 'id', 'name', 'price', and 'quantity'.");
         }
     }
-
-
 }
