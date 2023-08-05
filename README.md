@@ -5,17 +5,21 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/mirchaye/laravel-shopping-cart/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/mirchaye/laravel-shopping-cart/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/mirchaye/laravel-shopping-cart.svg?style=flat-square)](https://packagist.org/packages/mirchaye/laravel-shopping-cart)
 
-This **Shopping Cart Package** is a versatile and user-friendly shopping cart solution for Laravel applications. It empowers developers to effortlessly integrate a shopping cart system into their e-commerce projects. 
+This **Shopping Cart Package** is a versatile and user-friendly shopping cart solution for Laravel applications. It
+empowers developers to effortlessly integrate a shopping cart system into their e-commerce projects.
 
 ### :heavy_plus_sign: Features:
 
 - **Easy Cart Management**: Add, update, and remove items from the cart with simple and intuitive methods.
-- **Multiple Instances**: Create multiple instances of the cart, each with its own set of items, catering to different requirements.
+- **Multiple Instances**: Create multiple instances of the cart, each with its own set of items, catering to different
+  requirements.
 - **Flexible VAT Handling**: Support for items with or without VAT, giving you control over tax calculations.
-- **Custom Tax Rate**: Set the tax rate for the cart to ensure accurate tax calculation based on your region or business rules.
-- **Convenient Totals**: Get total, subtotal, and tax amounts with ease, making it a breeze to display accurate cart summaries.
-- **Comprehensive Testing**: The package comes with a robust suite of unit tests, ensuring reliable and bug-free functionality.
-
+- **Custom Tax Rate**: Set the tax rate for the cart to ensure accurate tax calculation based on your region or business
+  rules.
+- **Convenient Totals**: Get total, subtotal, and tax amounts with ease, making it a breeze to display accurate cart
+  summaries.
+- **Comprehensive Testing**: The package comes with a robust suite of unit tests, ensuring reliable and bug-free
+  functionality.
 
 ## Installation
 
@@ -42,6 +46,7 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'tax_rate' => 15.0,
 ];
 ```
 
