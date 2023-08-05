@@ -2,7 +2,6 @@
 
 namespace Mirchaye\ShoppingCart;
 
-use InvalidArgumentException;
 use Mirchaye\ShoppingCart\Contracts\ShoppingCartInterface;
 
 class ShoppingCart implements ShoppingCartInterface
@@ -10,14 +9,6 @@ class ShoppingCart implements ShoppingCartInterface
     private array $carts = [];
 
     private int|float $taxRate;
-
-    /**
-     * Set the tax rate for the cart from the package configuration.
-     */
-    //    public function setTaxRateFromConfig(): void
-    //    {
-    //        $this->taxRate = config('shopping-cart.tax_rate', 0);
-    //    }
 
     protected array $requiredKeys = ['id', 'name', 'price', 'quantity'];
 
@@ -179,12 +170,12 @@ class ShoppingCart implements ShoppingCartInterface
     /**
      * Validate the required keys in the item data array.
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      */
     private function validateItemData(array $itemData): void
     {
         if (count(array_diff($this->requiredKeys, array_keys($itemData))) > 0) {
-            throw new InvalidArgumentException("Invalid item data. The itemData array must contain 'id', 'name', 'price', and 'quantity'.");
+            throw new \InvalidArgumentException("Invalid item data. The itemData array must contain 'id', 'name', 'price', and 'quantity'.");
         }
     }
 }
