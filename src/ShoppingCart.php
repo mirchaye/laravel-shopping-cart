@@ -8,7 +8,9 @@ use Mirchaye\ShoppingCart\Contracts\ShoppingCartInterface;
 class ShoppingCart implements ShoppingCartInterface
 {
     protected array $requiredKeys = ['id', 'name', 'price', 'quantity'];
+
     private array $carts = [];
+
     private int|float $taxRate;
 
     /**
