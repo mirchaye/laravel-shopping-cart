@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  */
 class ShoppingCart extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return \Mirchaye\ShoppingCart\ShoppingCart::class;
     }
