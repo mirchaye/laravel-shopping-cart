@@ -10,7 +10,7 @@ class ShoppingCartServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        
+
         $package
             ->name('laravel-shopping-cart')
             ->hasConfigFile('shopping-cart')
